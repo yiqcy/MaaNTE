@@ -33,6 +33,15 @@ class AutoSellFish(CustomAction):
     sell_fail_template = cv2.imread(str(sell_fail_img), cv2.IMREAD_COLOR)
 
     def run(self, context: Context, argv: CustomAction.RunArg) -> CustomAction.RunResult:
+        if argv.custom_action_param:
+            try:
+                params = json.loads(argv.custom_action_param)
+                if not params.get("enabled", True):
+                    print("=== AutoSellFish disabled, skipping ===")
+                    return CustomAction.RunResult(success=True)
+            except:
+                pass
+
         print("=== Autofish Action Started ===")
         controller = context.tasker.controller
 

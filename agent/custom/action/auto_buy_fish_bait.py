@@ -33,6 +33,15 @@ class AutoBuyFishBait(CustomAction):
     buy_success_template = cv2.imread(str(buy_success_img), cv2.IMREAD_COLOR)
 
     def run(self, context: Context, argv: CustomAction.RunArg) -> CustomAction.RunResult:
+        if argv.custom_action_param:
+            try:
+                params = json.loads(argv.custom_action_param)
+                if not params.get("enabled", True):
+                    print("=== AutoBuyFishBait disabled, skipping ===")
+                    return CustomAction.RunResult(success=True)
+            except:
+                pass
+
         fish_shop_region = [35, 88, 410, 475]
         find_bait_success_region = [1044, 131, 68, 23]
         select_max_region = [1202, 620, 33, 32]

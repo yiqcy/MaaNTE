@@ -1,0 +1,45 @@
+{
+    "StartBugFishing": {
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "max_hit": 5,
+        "next": [
+            "AutoBugFish"
+        ]
+    },
+    "AutoBugFish": {
+        "action": "Custom",
+        "custom_action": "auto_bug_fish",
+        "custom_action_param": {
+            "count": 10,
+            "freq": 0.001
+        },
+        "next": [
+            "BugAutoSellFish",
+            "BugAutoBuyFishBait",
+            "StartBugFishing",
+            "BugTaskComplete"
+        ]
+    },
+    "BugAutoSellFish": {
+        "action": "Custom",
+        "custom_action": "auto_sell_fish",
+        "next": [
+            "BugAutoBuyFishBait",
+            "StartBugFishing",
+            "BugTaskComplete"
+        ]
+    },
+    "BugAutoBuyFishBait": {
+        "action": "Custom",
+        "custom_action": "auto_buy_fish_bait",
+        "next": [
+            "StartBugFishing",
+            "BugTaskComplete"
+        ]
+    },
+    "BugTaskComplete": {
+        "recognition": "DirectHit",
+        "action": "DoNothing"
+    }
+}
