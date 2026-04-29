@@ -5,21 +5,27 @@
 
 <div align="center">
 
+[English](docs/README_en.md)
+
 # MaaNTE
 
 😊MAA异环小助手😊
+
 由 [MaaFramework](https://github.com/MaaXYZ/MaaFramework) 强力驱动！
 
 本项目还处于早期开发阶段，欢迎提交PR和Issue
+
 </div>
 
 ## ✨ 功能一览
 
 - 🎣 自动钓鱼
-  - 🐟自动卖鱼
-  - 🪝自动买鱼饵
+  - 🐟 自动卖鱼
+  - 🪝 自动买鱼饵
 - 🥤 自动做咖啡
+  - 🔨 驱赶所有顾客
 - 💰 自动提取一咖舍收益
+  - 📦 自动补货
 
 ## ❓常见问题
 ### 🤔找不到怎么启动？
